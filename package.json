@@ -17,7 +17,7 @@
     "moment-timezone": "0.5.14",
     "network": "0.4.0",
     "node-persist": "2.1.0",
-    "npm": "6.0.0",
+    "npm": "6.4.1",
     "progress": "1.1.8",
     "request": "2.81.0",
     "require-reload": "0.2.2",
@@ -31,12 +31,12 @@
     "chai": "4.1.2",
     "mocha": "5.1.1",
     "network": "0.4.0",
-    "nyc": "11.7.2",
+    "nyc": "13.1.0",
     "should": "13.2.1",
     "supertest": "3.0.0"
   },
   "engines": {
-    "node": ">=0.12.0 <9.9.9"
+    "node": ">=7.9.0 <10.9.9"
   },
   "keywords": [
     "IoT",
@@ -62,5 +62,5 @@
     "lint": "jshint Utils.js",
     "test": "nyc --reporter=html --reporter=text mocha"
   },
-  "version": "1.2.51"
+  "version": "1.2.54"
 }
