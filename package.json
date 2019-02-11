@@ -9,7 +9,7 @@
     "async": "1.4.2",
     "colors": "1.1.2",
     "exists-sync": "0.0.3",
-    "extend": "3.0.1",
+    "extend": "3.0.2",
     "getmac": "1.2.1",
     "graceful-fs": "4.1.5",
     "linq": "3.0.5",
@@ -62,5 +62,5 @@
     "lint": "jshint Utils.js",
     "test": "nyc --reporter=html --reporter=text mocha"
   },
-  "version": "2.0.4"
+  "version": "2.0.5"
 }
