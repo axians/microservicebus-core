@@ -177,13 +177,13 @@ describe('Sign in', function () {
             done();
         });
     });
-    it('Upload syslogs should work', function (done) {
-        this.timeout(60000);
-        var r = microServiceBusHost.TestOnUploadSyslogs(function (sucess) {
-            expect(sucess).to.equal(true);
-            done();
-        });
-    });
+    // it('Upload syslogs should work', function (done) {
+    //     this.timeout(60000);
+    //     var r = microServiceBusHost.TestOnUploadSyslogs(function (sucess) {
+    //         expect(sucess).to.equal(true);
+    //         done();
+    //     });
+    // });
     it('Ping should work', function (done) {
         this.timeout(60000);
         var r = microServiceBusHost.TestOnPing("test");
