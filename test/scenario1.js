@@ -108,7 +108,7 @@ describe('Sign in', function () {
         SettingsHelper = require("./SettingsHelper.js");
         settingsHelper = new SettingsHelper();
         settings = {
-            "hubUri": "wss://stage.microservicebus.com",
+            "hubUri": "wss://microservicebus.com",
             "trackMemoryUsage": 0,
             "enableKeyPress": false,
             "useEncryption": false,
