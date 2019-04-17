@@ -33,6 +33,7 @@
   },
   "description": "node.js node for microservicebus. Please visit microservicebus.com for more information.",
   "devDependencies": {
+    "dbus-native": "^0.4.0",
     "network": "0.4.0",
     "nyc": "13.1.0",
     "supertest": "3.0.0"
@@ -64,5 +65,5 @@
     "lint": "jshint Utils.js",
     "test": "nyc --reporter=html --reporter=text mocha"
   },
-  "version": "2.0.41"
+  "version": "2.0.46"
 }
