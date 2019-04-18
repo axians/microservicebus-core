@@ -31,7 +31,7 @@
     "uuid": "2.0.3",
     "websocket": "1.0.26"
   },
-  "description": "node.js node for microservicebus. Please visit microservicebus.com for more information.",
+  "description": "node.js node for microServiceBus.com. Please visit https://microservicebus.com for more information.",
   "devDependencies": {
     "dbus-native": "^0.4.0",
     "network": "0.4.0",
@@ -65,5 +65,5 @@
     "lint": "jshint Utils.js",
     "test": "nyc --reporter=html --reporter=text mocha"
   },
-  "version": "2.0.49"
+  "version": "2.0.50"
 }
