@@ -21,7 +21,6 @@
     "moment-timezone": "0.5.14",
     "network": "0.4.0",
     "node-persist": "2.1.0",
-    "npm": "6.4.1",
     "progress": "1.1.8",
     "request": "2.88.0",
     "require-reload": "0.2.2",
@@ -35,7 +34,7 @@
   "devDependencies": {
     "dbus-native": "^0.4.0",
     "network": "0.4.0",
-    "nyc": "13.1.0",
+    "nyc": "14.1.1",
     "supertest": "3.0.0"
   },
   "engines": {
