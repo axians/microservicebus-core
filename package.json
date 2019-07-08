@@ -8,34 +8,33 @@
   "dependencies": {
     "app-module-path": "^2.2.0",
     "async": "1.4.2",
-    "chai": "4.1.2",
     "colors": "1.1.2",
     "cron": "1.6.0",
+    "dbus-native": "^0.4.0",
     "exists-sync": "0.0.3",
     "extend": "3.0.2",
     "getmac": "1.2.1",
     "graceful-fs": "4.1.5",
     "linq": "3.0.5",
-    "mocha": "5.1.1",
     "moment": "2.20.0",
     "moment-timezone": "0.5.14",
-    "network": "0.4.0",
+    "network": "0.4.1",
     "node-persist": "2.1.0",
     "progress": "1.1.8",
     "request": "2.88.0",
     "require-reload": "0.2.2",
     "retry-request": "4.0.0",
-    "should": "13.2.1",
     "underscore": "1.8.3",
     "uuid": "2.0.3",
     "websocket": "1.0.26"
   },
   "description": "node.js node for microServiceBus.com. Please visit https://microservicebus.com for more information.",
   "devDependencies": {
-    "dbus-native": "^0.4.0",
-    "network": "0.4.0",
+    "mocha": "5.1.1",
     "nyc": "14.1.1",
-    "supertest": "3.0.0"
+    "should": "13.2.1",
+    "supertest": "3.0.0",
+    "chai": "4.1.2"
   },
   "engines": {
     "node": ">=7.9.0 <10.9.9"
@@ -64,5 +63,5 @@
     "lint": "jshint Utils.js",
     "test": "nyc --reporter=html --reporter=text mocha"
   },
-  "version": "2.0.80"
+  "version": "2.0.81"
 }
