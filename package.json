@@ -37,7 +37,7 @@
     "chai": "4.1.2"
   },
   "engines": {
-    "node": ">=7.9.0 <10.9.9"
+    "node": ">=7.9.0 <12.6.0"
   },
   "keywords": [
     "IoT",
@@ -63,5 +63,5 @@
     "lint": "jshint Utils.js",
     "test": "nyc --reporter=html --reporter=text mocha"
   },
-  "version": "2.0.81"
+  "version": "2.0.83"
 }
