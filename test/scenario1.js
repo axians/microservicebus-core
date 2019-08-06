@@ -25,6 +25,11 @@ describe('Util functions', function () {
 
     it('padRight should work', function (done) {
         util = require("../lib/utils.js");
+        SettingsHelper = require("./SettingsHelper.js");
+        util.prepareNpm(new SettingsHelper());
+        done();
+    });
+    it('padRight should work', function (done) {
         var t = util.padRight("microServiceBus.com", 25, ' ');
         expect(t).to.equal("microServiceBus.com      ");
         done();
