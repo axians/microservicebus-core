@@ -26,3 +26,5 @@ coverage
 obj 
 .vs
 .vscode
+microservicebus-core.njsproj
+microservicebus-core.sln
