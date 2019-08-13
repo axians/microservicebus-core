@@ -6,7 +6,7 @@
   },
   "bin": {},
   "dependencies": {
-    "app-module-path": "^2.2.0",
+    "app-module-path": "2.2.0",
     "async": "1.4.2",
     "colors": "1.1.2",
     "chai": "4.1.2",
@@ -62,5 +62,5 @@
     "lint": "jshint Utils.js",
     "test": "nyc --reporter=html --reporter=text mocha"
   },
-  "version": "2.0.104"
+  "version": "2.1.0"
 }
