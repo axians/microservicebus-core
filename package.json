@@ -34,7 +34,6 @@
   },
   "description": "node.js node for microServiceBus.com. Please visit https://microservicebus.com for more information.",
   "devDependencies": {
-    "npm": "^6.11.2",
     "should": "^13.2.3"
   },
   "engines": {
@@ -64,5 +63,5 @@
     "lint": "jshint Utils.js",
     "test": "nyc --reporter=html --reporter=text mocha"
   },
-  "version": "2.1.6"
+  "version": "2.1.7"
 }
