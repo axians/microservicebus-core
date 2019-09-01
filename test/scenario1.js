@@ -21,30 +21,6 @@ var settings;
 var loggedInComplete1;
 var microServiceBusHost;
 
-// let node_path;
-// if (process.platform === "win32") {
-//     node_path = path.resolve(process.env.HOME, "AppData\\Roaming\\npm\\node_modules");//:%USERPROFILE%\\AppData\\npm\\node_modules:%USERPROFILE%\\AppData\\Roaming\\npm\\node_modules"
-// }
-// else {
-//     node_path = "/usr/lib/node_modules:/usr/local/lib/node:/usr/local/lib/node_modules";
-// }
-
-// let separator = process.platform === "win32" ? ";" : ":";
-// if (process.env.NODE_PATH) {
-//     process.env.NODE_PATH = process.env.NODE_PATH + separator + node_path;
-// }
-// else {
-//     process.env.NODE_PATH = node_path;
-// }
-if (process.platform === 'win32') {
-    let npmPath =  path.resolve(process.env.USERPROFILE,"AppData\\Roaming\\npm\\node_modules");
-    module.paths.push(npmPath);
-} else {
-    module.paths.push("/usr/lib/node_modules");
-    module.paths.push("/usr/local/lib/node");
-    module.paths.push("/usr/local/lib/node_modules");
-}
-
 describe('Util functions', function () {
 
     it('Prepare settings', function (done) {
