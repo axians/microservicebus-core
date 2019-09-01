@@ -21,12 +21,39 @@ var settings;
 var loggedInComplete1;
 var microServiceBusHost;
 
+// let node_path;
+// if (process.platform === "win32") {
+//     node_path = path.resolve(process.env.HOME, "AppData\\Roaming\\npm\\node_modules");//:%USERPROFILE%\\AppData\\npm\\node_modules:%USERPROFILE%\\AppData\\Roaming\\npm\\node_modules"
+// }
+// else {
+//     node_path = "/usr/lib/node_modules:/usr/local/lib/node:/usr/local/lib/node_modules";
+// }
+
+// let separator = process.platform === "win32" ? ";" : ":";
+// if (process.env.NODE_PATH) {
+//     process.env.NODE_PATH = process.env.NODE_PATH + separator + node_path;
+// }
+// else {
+//     process.env.NODE_PATH = node_path;
+// }
+if (process.platform === 'win32') {
+    let npmPath =  path.resolve(process.env.USERPROFILE,"AppData\\Roaming\\npm\\node_modules");
+    module.paths.push(npmPath);
+} else {
+    module.paths.push("/usr/lib/node_modules");
+    module.paths.push("/usr/local/lib/node");
+    module.paths.push("/usr/local/lib/node_modules");
+}
+
 describe('Util functions', function () {
 
-    it('padRight should work', function (done) {
+    it('Prepare settings', function (done) {
         util = require("../lib/utils.js");
         SettingsHelper = require("./SettingsHelper.js");
-        util.prepareNpm(new SettingsHelper());
+        // util.prepareNpm(new SettingsHelper());
+        // require('app-module-path').addPath(process.env.NODE_PATH);
+        // require('module').globalPaths.push(process.env.NODE_PATH);
+        // require('module')._initPaths();
         done();
     });
     it('padRight should work', function (done) {
@@ -89,6 +116,8 @@ describe('Encryption/Decryption', function () {
         done();
     });
 });
+process.env.organizationId = '2a0a736e-b4da-4bdb-9aaf-919b69e35a31';
+process.env.nodeKey = "SharedAccessSignature sr=2a0a736e-b4da-4bdb-9aaf-919b69e35a31&sig=OBlWdWboKx7h2yDWxFSYzL2hqrGwmn1VGb6%2b9vLarOI%3d&se=1567436372&skn=unitTestNode1";
 
 describe('Check configuration', function () {
     it('ENV organizationId should be set', function (done) {
@@ -282,7 +311,7 @@ describe('Post Signin', function () {
         pingResponse.should.equal(true);
         done();
     });
-    
+
     it('change state should work', function (done) {
         var TestOnChangeDebugResponse = microServiceBusHost.TestOnChangeState("Stop");
         done();
