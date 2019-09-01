@@ -20,7 +20,6 @@
     "mocha": "5.1.1",
     "moment": "2.20.0",
     "moment-timezone": "0.5.14",
-    "msbcam": "0.0.1",
     "network": "0.4.1",
     "node-persist": "2.1.0",
     "nyc": "14.1.1",
@@ -34,7 +33,9 @@
     "websocket": "1.0.26"
   },
   "description": "node.js node for microServiceBus.com. Please visit https://microservicebus.com for more information.",
-  "devDependencies": {},
+  "devDependencies": {
+    "should": "^13.2.3"
+  },
   "engines": {
     "node": ">=7.9.0 <12.6.0"
   },
