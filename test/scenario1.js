@@ -29,13 +29,6 @@ var persistHelper;
 describe('Util functions', function () {
 
     it('Prepare settings', function (done) {
-        console.log();
-        console.log();
-        console.log();
-        
-        console.log(process.env);
-        console.log();
-        console.log();
         
         util = require("../lib/utils.js");
         SettingsHelper = require("./SettingsHelper.js");
