@@ -32,7 +32,7 @@ describe('Util functions', function () {
         this.timeout(60000);
         util = require("../lib/utils.js");
         SettingsHelper = require("./SettingsHelper.js");
-        util.prepareNpm(new SettingsHelper());
+        //util.prepareNpm(new SettingsHelper());
 
     });
     it('padRight should work', function (done) {
