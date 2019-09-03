@@ -61,12 +61,12 @@ describe('Util functions', function () {
         
         exec("npm list -g", function (error, stdout, stderr) {
             console.log('npm list -g: ' + stdout);
-            
+            done();
         });
         console.log();
         console.log();
         console.log();
-        done();
+        
     });
     it('padRight should work', function (done) {
         var t = util.padRight("microServiceBus.com", 25, ' ');
