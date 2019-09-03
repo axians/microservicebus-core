@@ -33,7 +33,7 @@ describe('Util functions', function () {
         util = require("../lib/utils.js");
         SettingsHelper = require("./SettingsHelper.js");
         //util.prepareNpm(new SettingsHelper());
-
+        done();
     });
     it('padRight should work', function (done) {
         var t = util.padRight("microServiceBus.com", 25, ' ');
@@ -79,23 +79,6 @@ describe('Util functions', function () {
             done();
         });       
     });
-    // it('getDependanciesRecursive should work', function (done) {
-    //     this.timeout(6000);
-    //     util.getDependanciesRecursive(function(err, fileName){
-    //         should.not.exist(err);
-    //         done();
-    //     });
-       
-    // });
-    // it('getDependanciesRecursive should work', function (done) {
-    //     this.timeout(6000);
-    //     util.getAvailableDiskspaceRaw(function(err, fileName){
-    //         should.not.exist(err);
-    //         done();
-    //     });
-       
-    // });
-    
 });
 
 describe('TTL functions', function (){
@@ -313,31 +296,6 @@ describe('Run scenario test', function () {
     });
 });
 
-// describe('PersistHelper functions', function (){
-//     it('Init PersistHelper should work', function (done) {
-//         console.log('settingsHelper.persistDirectory : ' + settingsHelper.persistDirectory)
-//         let PersistHelper = require("../lib/PersistHelper");
-
-//         try{
-//             persistHelper = new PersistHelper(settingsHelper);
-//             done();
-//         }
-//         catch(err){
-//             should.not.exist(err);
-//         }
-        
-//     });
-//     it('persist should work', function (done) {
-//         this.timeout(6000);
-//         persistHelper.persist({id:1}, 'event', function (err) {
-//             should.not.exist(err);
-//           });
-//     });
-//     it('there should be persisted messages', function (done) {
-//         this.timeout(6000);
-//         expect(persistHelper.storage.keys()).to.have.lengthOf(1);
-//     });
-// });
 
 describe('Post Signin', function () {
     
@@ -358,13 +316,13 @@ describe('Post Signin', function () {
         var TestOnChangeDebugResponse = microServiceBusHost.TestOnChangeState("Stop");
         done();
     });
-    // it('removeNpmPackage (msbcam) should work', function (done) {
-    //     this.timeout(30000);
-    //     util.removeNpmPackage("msbcam", function (err) {
-    //         expect(err).to.be.null;
-    //         done();
-    //     });
-    // });
+    it('removeNpmPackage (msbcam) should work', function (done) {
+        this.timeout(30000);
+        util.removeNpmPackage("msbcam", function (err) {
+            expect(err).to.be.null;
+            done();
+        });
+    });
     it('Stop should work', function (done) {
         this.timeout(10000);
         
