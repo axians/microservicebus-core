@@ -29,40 +29,17 @@ var persistHelper;
 describe('Util functions', function () {
 
     it('Prepare settings', function (done) {
-        util = require("../lib/utils.js");
-        SettingsHelper = require("./SettingsHelper.js");
-        util.prepareNpm(new SettingsHelper());
-        // require('app-module-path').addPath(process.env.NODE_PATH);
-        // require('module').globalPaths.push(process.env.NODE_PATH);
-        // require('module')._initPaths();
-
-        // var directories = "/usr/lib/node_modules:/usr/local/lib/node:/usr/local/lib/node_modules".split(":");
-        // console.log();
-        // console.log();
-        // console.log();
-        // directories.forEach(function(directoryPath ){
-        //     console.log(directoryPath.green);
-        //     fs.readdir(directoryPath, function (err, files) {
-        //         //handling error
-        //         if (err) {
-        //             return console.log('Unable to scan directory: ' + err);
-        //         } 
-        //         //listing all files using forEach
-        //         files.forEach(function (file) {
-        //             // Do whatever you want to do with the file
-        //             console.log('\t'+file); 
-        //         });
-        //         console.log('console.log();');
-        //     });
-        // });
         console.log();
         console.log();
         console.log();
-        
         
         console.log(process.env);
         console.log();
         console.log();
+        
+        util = require("../lib/utils.js");
+        SettingsHelper = require("./SettingsHelper.js");
+        util.prepareNpm(new SettingsHelper());
         
     });
     it('padRight should work', function (done) {
