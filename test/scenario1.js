@@ -59,11 +59,8 @@ describe('Util functions', function () {
         console.log();
         console.log();
         
-        exec("npm list -g", function (error, stdout, stderr) {
-            console.log('npm list -g: ' + stdout);
-            done();
-        });
-        console.log();
+        
+        console.log(process.env);
         console.log();
         console.log();
         
