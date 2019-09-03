@@ -33,7 +33,7 @@ describe('Util functions', function () {
         util = require("../lib/utils.js");
         SettingsHelper = require("./SettingsHelper.js");
         util.prepareNpm(new SettingsHelper());
-        
+        console.log(process.env);
     });
     it('padRight should work', function (done) {
         var t = util.padRight("microServiceBus.com", 25, ' ');
