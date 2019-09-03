@@ -29,7 +29,7 @@ var persistHelper;
 describe('Util functions', function () {
 
     it('Prepare settings', function (done) {
-        
+        this.timeout(60000);
         util = require("../lib/utils.js");
         SettingsHelper = require("./SettingsHelper.js");
         util.prepareNpm(new SettingsHelper());
@@ -267,7 +267,7 @@ describe('Run scenario test', function () {
         }
     });
     it('Flow should complete', function (done) {
-        this.timeout(10000);
+        this.timeout(60000);
         microServiceBusHost.OnUnitTestComplete(function (result) {
             expect(1).to.eql(1);
             flowResult = result;
@@ -340,14 +340,7 @@ describe('Run scenario test', function () {
 // });
 
 describe('Post Signin', function () {
-    it('azureApiAppInboundService.js should exist after login', function (done) {
-        var filePath = path.resolve(SCRIPTFOLDER, "azureApiAppInboundService.js");
-        var ret = fs.statSync(filePath);
-        ret.should.be.type('object');
-
-        done();
-    });
-
+    
     it('javascriptaction.js should exist after calling service', function (done) {
         var filePath = path.resolve(__dirname, SCRIPTFOLDER, "javascriptaction.js");
 
