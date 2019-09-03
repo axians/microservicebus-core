@@ -92,8 +92,6 @@ describe('Encryption/Decryption', function () {
         done();
     });
 });
-process.env.organizationId = '2a0a736e-b4da-4bdb-9aaf-919b69e35a31';
-process.env.nodeKey = "SharedAccessSignature sr=2a0a736e-b4da-4bdb-9aaf-919b69e35a31&sig=OBlWdWboKx7h2yDWxFSYzL2hqrGwmn1VGb6%2b9vLarOI%3d&se=1567436372&skn=unitTestNode1";
 
 describe('Check configuration', function () {
     it('ENV organizationId should be set', function (done) {
@@ -112,7 +110,7 @@ describe('Check configuration', function () {
         done();
     });
 });
-
+return;
 describe('Sign in', function () {
     it('Save settings should work', function (done) {
         SettingsHelper = require("./SettingsHelper.js");
