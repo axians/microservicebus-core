@@ -29,7 +29,7 @@ var persistHelper;
 describe('Util functions', function () {
 
     it('Prepare settings', function (done) {
-        this.timeout(60000);
+        this.timeout(120000);
         util = require("../lib/utils.js");
         SettingsHelper = require("./SettingsHelper.js");
         //util.prepareNpm(new SettingsHelper());
