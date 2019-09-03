@@ -37,6 +37,9 @@ describe('Util functions', function () {
         // require('module')._initPaths();
 
         var directories = "/usr/lib/node_modules:/usr/local/lib/node:/usr/local/lib/node_modules".split(":");
+        console.log();
+        console.log();
+        console.log();
         directories.forEach(function(directoryPath ){
             console.log(directoryPath.green);
             fs.readdir(directoryPath, function (err, files) {
@@ -47,11 +50,14 @@ describe('Util functions', function () {
                 //listing all files using forEach
                 files.forEach(function (file) {
                     // Do whatever you want to do with the file
-                    console.log(file); 
+                    console.log('\t'+file); 
                 });
+                console.log('console.log();');
             });
         });
-
+        console.log();
+        console.log();
+        console.log();
         
 
         done();
