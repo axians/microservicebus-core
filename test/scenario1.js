@@ -36,30 +36,36 @@ describe('Util functions', function () {
         // require('module').globalPaths.push(process.env.NODE_PATH);
         // require('module')._initPaths();
 
-        var directories = "/usr/lib/node_modules:/usr/local/lib/node:/usr/local/lib/node_modules".split(":");
-        console.log();
-        console.log();
-        console.log();
-        directories.forEach(function(directoryPath ){
-            console.log(directoryPath.green);
-            fs.readdir(directoryPath, function (err, files) {
-                //handling error
-                if (err) {
-                    return console.log('Unable to scan directory: ' + err);
-                } 
-                //listing all files using forEach
-                files.forEach(function (file) {
-                    // Do whatever you want to do with the file
-                    console.log('\t'+file); 
-                });
-                console.log('console.log();');
-            });
-        });
+        // var directories = "/usr/lib/node_modules:/usr/local/lib/node:/usr/local/lib/node_modules".split(":");
+        // console.log();
+        // console.log();
+        // console.log();
+        // directories.forEach(function(directoryPath ){
+        //     console.log(directoryPath.green);
+        //     fs.readdir(directoryPath, function (err, files) {
+        //         //handling error
+        //         if (err) {
+        //             return console.log('Unable to scan directory: ' + err);
+        //         } 
+        //         //listing all files using forEach
+        //         files.forEach(function (file) {
+        //             // Do whatever you want to do with the file
+        //             console.log('\t'+file); 
+        //         });
+        //         console.log('console.log();');
+        //     });
+        // });
         console.log();
         console.log();
         console.log();
         
-
+        exec("npm list -g", function (error, stdout, stderr) {
+            console.log('npm list -g: ' + stdout);
+            
+        });
+        console.log();
+        console.log();
+        console.log();
         done();
     });
     it('padRight should work', function (done) {
