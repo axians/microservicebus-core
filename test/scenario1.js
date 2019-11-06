@@ -11,7 +11,7 @@ var request = require('supertest');
 var should = require('should');
 var fs = require('fs');
 require('colors');
-var SCRIPTFOLDER = path.resolve(process.env.HOME, "microServiceBus/services");
+var SCRIPTFOLDER = path.resolve(process.env.HOME || process.env.HOMEPATH, "microServiceBus/services");
 var util;
 var MicroServiceBusHost;
 var SettingsHelper;
@@ -295,7 +295,6 @@ describe('Run scenario test', function () {
         });
     });
 });
-
 
 describe('Post Signin', function () {
     
