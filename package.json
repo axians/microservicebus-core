@@ -8,8 +8,8 @@
   "dependencies": {
     "app-module-path": "2.2.0",
     "async": "1.4.2",
-    "colors": "1.1.2",
     "chai": "4.1.2",
+    "colors": "1.1.2",
     "cron": "1.6.0",
     "dbus-native": "^0.4.0",
     "exists-sync": "0.0.3",
@@ -27,14 +27,15 @@
     "request": "2.88.0",
     "require-reload": "0.2.2",
     "retry-request": "4.0.0",
-    "should": "13.2.1",
     "supertest": "3.0.0",
     "underscore": "1.8.3",
     "uuid": "2.0.3",
     "websocket": "1.0.26"
   },
   "description": "node.js node for microServiceBus.com. Please visit https://microservicebus.com for more information.",
-  "devDependencies": {},
+  "devDependencies": {
+    "should": "^13.2.3"
+  },
   "engines": {
     "node": ">=7.9.0 <12.6.0"
   },
@@ -62,5 +63,5 @@
     "lint": "jshint Utils.js",
     "test": "nyc --reporter=html --reporter=text mocha"
   },
-  "version": "2.1.3"
+  "version": "2.4.0"
 }
