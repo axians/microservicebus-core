@@ -63,5 +63,5 @@
     "lint": "jshint Utils.js",
     "test": "nyc --reporter=html --reporter=text mocha"
   },
-  "version": "2.4.0"
+  "version": "2.4.1"
 }
