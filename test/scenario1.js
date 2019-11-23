@@ -200,7 +200,7 @@ describe('Run scenario test', function () {
             "nodeName": "unitTestNode1",
             "organizationId": orgId,
             "machineName": "unitTestNode1",
-            "id": "644424d1-b591-4fd0-b7c2-29736b2f51ac",
+            "id": "136b56ac-6024-46e2-bd01-f1f9fd6fe21e",
             "sas": nodeKey,
             "port": 9090
         };
@@ -310,9 +310,12 @@ describe('Post Signin', function () {
         pingResponse.should.equal(true);
         done();
     });
-
-    it('change state should work', function (done) {
-        var TestOnChangeDebugResponse = microServiceBusHost.TestOnChangeState("Stop");
+    it('change state to InActive should work', function (done) {
+        var TestOnChangeDebugResponse = microServiceBusHost.TestOnChangeState("InActive");
+        done();
+    });
+    it('change state to Active should work', function (done) {
+        var TestOnChangeDebugResponse = microServiceBusHost.TestOnChangeState("Active");
         done();
     });
     it('removeNpmPackage (msbcam) should work', function (done) {
@@ -326,6 +329,14 @@ describe('Post Signin', function () {
         this.timeout(10000);
         
         microServiceBusHost.TestStop(function(err){
+            should.not.exist(err);
+            done();
+        });
+    });
+    it('OnStop should work', function (done) {
+        this.timeout(10000);
+        
+        microServiceBusHost.TestOnStop(function(err){
             should.not.exist(err);
             done();
         });
