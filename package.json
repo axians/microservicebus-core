@@ -22,7 +22,7 @@
     "moment-timezone": "0.5.14",
     "network": "0.4.1",
     "node-persist": "2.1.0",
-    "nyc": "14.1.1",
+    "nyc": "15.0.0",
     "progress": "1.1.8",
     "request": "2.88.0",
     "require-reload": "0.2.2",
@@ -65,4 +65,3 @@
   },
   "version": "2.6.0"
 }
-
