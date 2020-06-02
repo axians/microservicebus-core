@@ -7,7 +7,7 @@ var util = require("../lib/utils.js");
 
 describe('Util functions', function () {
     
-    it('addNpmPackage (msbcam and hello-world-node-package) should work', function (done) {
+    it('addNpmPackage (msbcam, hello-world-node-package and colors) should work', function (done) {
         this.timeout(30000);
         util.addNpmPackages("msbcam,hello-world-node-package", false, function (err) {
             expect(err).to.equal(null);
@@ -22,8 +22,14 @@ describe('Util functions', function () {
     });
     it('require (hello-world-node-package) should work', function (done) {
         this.timeout(30000);
-        let msbcam = require('hello-world-node-package');
-        expect(msbcam).not.to.be.null;
+        let helloWorld = require('hello-world-node-package');
+        expect(helloWorld).not.to.be.null;
+        done();
+    });
+    it('require (colors) should work', function (done) {
+        this.timeout(30000);
+        let c = require('colors');
+        expect(c).not.to.be.null;
         done();
     });
     it('removeNpmPackage (msbcam) should work', function (done) {
