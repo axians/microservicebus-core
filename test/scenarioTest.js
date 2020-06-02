@@ -41,15 +41,16 @@ describe('Util functions', function () {
         done();
     });
     it('padLeft should work', function (done) {
-
         var t = util.padLeft("microServiceBus.com", 25, ' ');
         expect(t).to.equal("      microServiceBus.com");
         done();
     });
     it('addNpmPackage (msbcam) should work', function (done) {
         this.timeout(30000);
-        util.addNpmPackages("msbcam",false, function (err) {
+        util.addNpmPackages("msbcam@0.0.1",false, function (err) {
             expect(err).to.equal(null);
+            let msbcam = require('msbcam');
+            expect(msbcam).not.to.equal(null);
             done();
         });
     });
