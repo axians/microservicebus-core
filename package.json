@@ -30,8 +30,7 @@
     "retry-request": "4.0.0",
     "supertest": "3.0.0",
     "underscore": "1.8.3",
-    "uuid": "2.0.3",
-    "websocket": "1.0.26"
+    "uuid": "2.0.3"
   },
   "description": "node.js node for microServiceBus.com. Please visit https://microservicebus.com for more information.",
   "devDependencies": {
@@ -64,5 +63,5 @@
     "lint": "jshint Utils.js",
     "test": "nyc --reporter=html --reporter=text mocha"
   },
-  "version": "3.2.0"
+  "version": "3.3.1"
 }

@@ -1,0 +1,415 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://microservicebus.com/meterconfiguration.json",
+    "type": "object",
+    "title": "microServiceBus.com Meter Configuration",
+    "required": [
+        "id",
+        "connectivity",
+        "datasets"
+    ],
+    "additionalProperties": true,
+    "properties": {
+        "id": {
+            "type": "string"
+        },
+        "type": {
+            "type": "string"
+        },
+        "manufacturer": {
+            "type": "string"
+        },
+        "model": {
+            "type": "string"
+        },
+        "connectivity": {
+            "type": "object",
+            "required": [
+                "protocol",
+                "transport"
+            ],
+            "additionalProperties": true,
+            "properties": {
+                "protocol": {
+                    "type": "string",
+                    "enum": [
+                        "modbus",
+                        "mbus"
+                    ]
+                },
+                "transport": {
+                    "type": "string",
+                    "enum": [
+                        "TCP",
+                        "RTU"
+                    ]
+                },
+                "ip": {
+                    "type": "string"
+                },
+                "networkPort": {
+                    "type": "integer"
+                },
+                "slaveAddress": {
+                    "type": "integer"
+                },
+                "serialPort": {
+                    "type": "string"
+                },
+                "baudRate": {
+                    "type": "integer"
+                },
+                "parity": {
+                    "type": "string",
+                    "enum": [
+                        "even"
+                    ]
+                },
+                "dataBits": {
+                    "type": "integer"
+                },
+                "stopBits": {
+                    "type": "integer"
+                }
+            },
+            "allOf": [
+                {
+                    "if": {
+                        "properties": {
+                            "transport": {
+                                "const": "TCP"
+                            }
+                        }
+                    },
+                    "then": {
+                        "required": [
+                            "ip",
+                            "networkPort"
+                        ]
+                    }
+                },
+                {
+                    "if": {
+                        "properties": {
+                            "transport": {
+                                "const": "RTU"
+                            }
+                        }
+                    },
+                    "then": {
+                        "required": [
+                            "serialPort",
+                            "baudRate",
+                            "parity",
+                            "dataBits",
+                            "stopBits"
+                        ]
+                    }
+                },
+                {
+                    "if": {
+                        "properties": {
+                            "protocol": {
+                                "const": "modbus"
+                            }
+                        },
+                        "required": [
+                            "protocol"
+                        ]
+                    },
+                    "then": {
+                        "required": [
+                            "slaveAddress"
+                        ]
+                    }
+                }
+            ]
+        },
+        "datasets": {
+            "type": "array",
+            "additionalItems": true,
+            "items": {
+                "anyOf": [
+                    {
+                        "type": "object",
+                        "additionalProperties": true,
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            },
+                            "manufacturer": {
+                                "type": "string"
+                            },
+                            "version": {
+                                "type": "string"
+                            },
+                            "deviceType": {
+                                "type": "string"
+                            },
+                            "aes": {
+                                "type": "string"
+                            },
+                            "modbusFunction": {
+                                "type": "string"
+                            },
+                            "configuration": {
+                                "type": "object",
+                                "required": [
+                                    "protocol",
+                                    "transport"
+                                ],
+                                "additionalProperties": true,
+                                "properties": {
+                                    "protocol": {
+                                        "type": "string",
+                                        "enum": [
+                                            "modbus",
+                                            "mbus"
+                                        ]
+                                    },
+                                    "transport": {
+                                        "type": "string",
+                                        "enum": [
+                                            "TCP",
+                                            "RTU"
+                                        ]
+                                    },
+                                    "ip": {
+                                        "type": "string"
+                                    },
+                                    "networkPort": {
+                                        "type": "integer"
+                                    },
+                                    "slaveAddress": {
+                                        "type": "integer"
+                                    },
+                                    "serialPort": {
+                                        "type": "integer"
+                                    },
+                                    "baudRate": {
+                                        "type": "integer"
+                                    },
+                                    "parity": {
+                                        "type": "string",
+                                        "enum": [
+                                            "even",
+                                            "odd"
+                                        ]
+                                    },
+                                    "dataBits": {
+                                        "type": "integer"
+                                    },
+                                    "stopBits": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "allOf": [
+                                    {
+                                        "if": {
+                                            "properties": {
+                                                "protocol": {
+                                                    "const": "modbus"
+                                                }
+                                            },
+                                            "required": [
+                                                "protocol"
+                                            ]
+                                        },
+                                        "then": {
+                                            "required": [
+                                                "slaveAddress"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "if": {
+                                            "properties": {
+                                                "transport": {
+                                                    "const": "TCP"
+                                                }
+                                            }
+                                        },
+                                        "then": {
+                                            "required": [
+                                                "ip",
+                                                "networkPort"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "if": {
+                                            "properties": {
+                                                "transport": {
+                                                    "const": "RTU"
+                                                }
+                                            }
+                                        },
+                                        "then": {
+                                            "required": [
+                                                "serialPort",
+                                                "baudRate",
+                                                "parity",
+                                                "dataBits",
+                                                "stopBits"
+                                            ]
+                                        }
+                                    }
+                                ]
+                            },
+                            "datapoints": {
+                                "type": "array",
+                                "additionalItems": true,
+                                "items": {
+                                    "anyOf": [
+                                        {
+                                            "type": "object",
+                                            "additionalProperties": true,
+                                            "properties": {
+                                                "id": {
+                                                    "type": "string"
+                                                },
+                                                "index": {
+                                                    "type": "integer"
+                                                },
+                                                "registerAddress": {
+                                                    "type": "integer"
+                                                },
+                                                "datatype": {
+                                                    "type": "string"
+                                                },
+                                                "metadata": {
+                                                    "type": "object",
+                                                    "required": [
+                                                        "messageType",
+                                                        "unit",
+                                                        "scale"
+                                                    ],
+                                                    "additionalProperties": true,
+                                                    "properties": {
+                                                        "messageType": {
+                                                            "type": "string"
+                                                        },
+                                                        "readingType": {
+                                                            "type": "string"
+                                                        },
+                                                        "unit": {
+                                                            "type": "string"
+                                                        },
+                                                        "scale": {
+                                                            "type": "integer"
+                                                        }
+                                                    }
+                                                },
+                                                "configuration": {
+                                                    "type": "object",
+                                                    "required": [
+                                                        "modbusFuction",
+                                                        "registerRead"
+                                                    ],
+                                                    "additionalProperties": true,
+                                                    "properties": {
+                                                        "modbusFuction": {
+                                                            "type": "integer"
+                                                        },
+                                                        "registerRead": {
+                                                            "type": "integer"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "allOf": [
+                            {
+                                "if": {
+                                    "properties": {
+                                        "transport": {
+                                            "const": "TCP"
+                                        }
+                                    },
+                                    "required": [
+                                        "transport"
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    },
+    "allOf": [
+        {
+            "if": {
+                "properties": {
+                    "connectivity": {
+                        "properties": {
+                            "protocol": {
+                                "const": "modbus"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "datasets": {
+                        "items": {
+                            "required": [
+                                "modbusFunction"
+                            ],
+                            "properties": {
+                                "datapoints": {
+                                    "items": {
+                                        "required": [
+                                            "registerAddress",
+                                            "datatype"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "connectivity": {
+                        "properties": {
+                            "protocol": {
+                                "const": "mbus"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "datasets": {
+                        "items": {
+                            "required": [
+                                "id",
+                                "manufacturer",
+                                "version"
+                            ],
+                            "properties": {
+                                "datapoints": {
+                                    "items": {
+                                        "required": [
+                                            "index"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}
