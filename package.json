@@ -18,13 +18,13 @@
     "getmac": "1.2.1",
     "graceful-fs": "4.1.5",
     "linq": "3.0.5",
-    "mocha": "7.1.2",
+    "mocha": "8.1.3",
     "moment": "2.20.0",
     "moment-timezone": "0.5.14",
     "network": "0.4.1",
     "node-persist": "3.0.5",
     "node-pty":"0.9.0",
-    "nyc": "15.0.1",
+    "nyc": "15.1.0",
     "progress": "1.1.8",
     "request": "2.88.0",
     "require-reload": "0.2.2",
@@ -64,5 +64,5 @@
     "lint": "jshint Utils.js",
     "test": "nyc --reporter=html --reporter=text mocha"
   },
-  "version": "3.5.3"
+  "version": "3.6.0"
 }
