@@ -12,7 +12,6 @@
     "chai": "4.1.2",
     "colors": "1.1.2",
     "cron": "1.6.0",
-    "dbus-native": "^0.4.0",
     "exists-sync": "0.0.3",
     "extend": "3.0.2",
     "getmac": "1.2.1",
@@ -23,7 +22,6 @@
     "moment-timezone": "0.5.14",
     "network": "0.4.1",
     "node-persist": "3.0.5",
-    "node-pty": "0.9.0",
     "nyc": "15.1.0",
     "progress": "1.1.8",
     "request": "2.88.0",
@@ -32,6 +30,10 @@
     "supertest": "3.0.0",
     "underscore": "1.8.3",
     "uuid": "2.0.3"
+  },
+  "optionalDependencies": {
+    "node-pty": "0.9.0",
+    "dbus-native": "^0.4.0"
   },
   "description": "node.js node for microServiceBus.com. Please visit https://microservicebus.com for more information.",
   "devDependencies": {
@@ -64,5 +66,5 @@
     "lint": "jshint Utils.js",
     "test": "nyc --reporter=html --reporter=text mocha"
   },
-  "version": "3.7.1"
+  "version": "3.7.4"
 }
