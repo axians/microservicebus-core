@@ -11,13 +11,12 @@
     "async": "3.2.0",
     "chai": "4.1.2",
     "colors": "1.4.0",
-    "convert-units": "^2.3.4",
+    "convert-units": "2.3.4",
     "cron": "1.6.0",
     "exists-sync": "0.0.3",
     "extend": "3.0.2",
     "getmac": "1.2.1",
     "graceful-fs": "4.1.5",
-    "linq": "3.0.5",
     "mocha": "8.1.3",
     "moment": "2.20.0",
     "moment-timezone": "0.5.14",
@@ -28,20 +27,19 @@
     "request": "2.88.2",
     "require-reload": "0.2.2",
     "retry-request": "4.0.0",
+    "should": "13.2.3",
     "supertest": "3.0.0",
     "underscore": "1.8.3",
     "uuid": "8.3.0"
   },
   "optionalDependencies": {
     "node-pty": "0.9.0",
-    "dbus-native": "^0.4.0"
+    "dbus-native": "0.4.0"
   },
   "description": "node.js node for microServiceBus.com. Please visit https://microservicebus.com for more information.",
-  "devDependencies": {
-    "should": "^13.2.3"
-  },
+  "devDependencies": {},
   "engines": {
-    "node": ">=7.9.0 <12.6.0"
+    "node": ">=10.15.0 <14.3.0"
   },
   "keywords": [
     "IoT",
@@ -67,5 +65,5 @@
     "lint": "jshint Utils.js",
     "test": "nyc --reporter=html --reporter=text mocha"
   },
-  "version": "3.7.8"
+  "version": "3.8.0"
 }
