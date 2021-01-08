@@ -1,4 +1,4 @@
-﻿![alt](https://blogical.blob.core.windows.net/microservicebus/Logosmall.png)
+![alt](https://blogical.blob.core.windows.net/microservicebus/Logosmall.png)
 
 [![Build Status](https://travis-ci.org/axians/microservicebus-core.svg?branch=dev)](https://travis-ci.org/axians/microservicebus-core)
 [![Downloads](https://img.shields.io/npm/dm/node-mbus.svg)](https://www.npmjs.com/package/microservicebus-core)
