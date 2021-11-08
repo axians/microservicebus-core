@@ -47,7 +47,7 @@ describe('Util functions', function () {
     });
     it('addNpmPackage (msbcam) should work', function (done) {
         this.timeout(30000);
-        util.addNpmPackages("msbcam@0.0.1",false, function (err) {
+        util.addNpmPackages("msbcam@0.0.1", false, function (err) {
             expect(err).to.equal(null);
             let msbcam = require('msbcam');
             expect(msbcam).not.to.equal(null);
@@ -73,23 +73,28 @@ describe('Util functions', function () {
         done();
     });
     it('compress should work', function (done) {
-        var srcPath = path.resolve(__dirname,'../README.md' );
-        var dstPath = path.resolve(__dirname,'../README.md' );
-        util.compress (srcPath, dstPath, function(err, fileName){
-            should.not.exist(err);
+        if (require("os").platform() === 'win32'){
             done();
-        });       
+         }
+        else {
+            var srcPath = path.resolve(__dirname, '../README.md');
+            var dstPath = path.resolve(__dirname, '../README.md');
+            util.compress(srcPath, dstPath, function (err, fileName) {
+                should.not.exist(err);
+                done();
+            });
+        }
     });
 });
 
-describe('TTL functions', function (){
+describe('TTL functions', function () {
     it('Init TTLCollection should work', function (done) {
         let TTLCollection = require("../lib/TTLCollection");
         const TTLNAME = "TTLSAMPLE"
         const TTLHISTORY_TTL = 7 * 24 * 60 * 60 * 1000; // one week
         const TTLHISTORY_CHECKINTERVAL = 5 * 60 * 1000; // every 5 minutes
         const TTLHISTORY_PERSISTINTERVAL = 5 * 60 * 1000; // 5 minutes
-        
+
         ttlCollection = new TTLCollection({
             key: TTLNAME,
             ttl: TTLHISTORY_TTL,
@@ -98,15 +103,15 @@ describe('TTL functions', function (){
             persistDir: path.resolve(__dirname, "../coverage"),
             persistFileName: TTLNAME + '.json'
         });
-        try{
+        try {
             ttlCollection.push(false);
             done();
         }
-        catch(err){
+        catch (err) {
             should.not.exist(err);
             done();
         }
-        
+
     });
     it('filterCollection should work', function (done) {
         this.timeout(6000);
@@ -118,12 +123,12 @@ describe('TTL functions', function (){
     });
     it('pushUnique should work', function (done) {
         this.timeout(6000);
-        
-        try{
+
+        try {
             ttlCollection.pushUnique(42, 42, "agroup");
             done();
         }
-        catch(err){
+        catch (err) {
             should.not.exist(err);
             done();
         }
@@ -136,12 +141,12 @@ describe('TTL functions', function (){
     });
     it('filterByGroup  should work', function (done) {
         this.timeout(6000);
-        try{
-            let group = ttlCollection.filterByGroup ("agroup");
+        try {
+            let group = ttlCollection.filterByGroup("agroup");
             expect(group.length).to.be.gte(1);
             done();
         }
-        catch(err){
+        catch (err) {
             should.not.exist(err);
             done();
         }
@@ -210,7 +215,7 @@ describe('Run scenario test', function () {
         done();
     });
     it('saveSettings should work', function (done) {
-        util.saveSettings(settingsHelper.settings, function(err){
+        util.saveSettings(settingsHelper.settings, function (err) {
             should.not.exist(err);
             done();
         });
@@ -259,12 +264,12 @@ describe('Run scenario test', function () {
         });
     });
     it('Flow result should be good', function (done) {
-        for(let property in flowResult){
+        for (let property in flowResult) {
             expect(flowResult[property]).to.eql(true);
-            let result = flowResult[property] ? "√".green : "failed".red  
-            console.log('\t' +property + ' : ' + result);
+            let result = flowResult[property] ? "√".green : "failed".red
+            console.log('\t' + property + ' : ' + result);
         }
-        
+
         done();
     });
     it('Enable tracking should work', function (done) {
@@ -298,7 +303,7 @@ describe('Run scenario test', function () {
 });
 
 describe('Post Signin', function () {
-    
+
     it('javascriptaction.js should exist after calling service', function (done) {
         var filePath = path.resolve(__dirname, SCRIPTFOLDER, "javascriptaction.js");
 
@@ -325,8 +330,8 @@ describe('Post Signin', function () {
     });
     it('Stop should work', function (done) {
         this.timeout(10000);
-        
-        microServiceBusHost.TestStop(function(err){
+
+        microServiceBusHost.TestStop(function (err) {
             should.not.exist(err);
             done();
         });
