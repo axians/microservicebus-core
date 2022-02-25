@@ -12,7 +12,7 @@
     "chai": "4.3.4",
     "colors": "1.4.0",
     "convert-units": "2.3.4",
-    "cron": "1.6.0",
+    "cron": "1.8.2",
     "extend": "3.0.2",
     "getmac": "1.2.1",
     "graceful-fs": "4.1.5",
@@ -65,5 +65,5 @@
     "lint": "jshint Utils.js",
     "test": "nyc --reporter=html --reporter=text mocha"
   },
-  "version": "3.14.8"
+  "version": "3.14.9"
 }
