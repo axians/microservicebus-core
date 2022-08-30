@@ -17,7 +17,7 @@
     "getmac": "1.2.1",
     "graceful-fs": "4.1.5",
     "mocha": "9.2.2",
-    "moment": "2.29.2",
+    "moment": "2.29.4",
     "moment-timezone": "0.5.14",
     "network": "0.6.0",
     "node-persist": "3.1.0",
@@ -66,5 +66,5 @@
     "lint": "jshint Utils.js",
     "test": "nyc --reporter=html --reporter=text mocha"
   },
-  "version": "3.9.95"
+  "version": "3.9.96"
 }
