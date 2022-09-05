@@ -39,7 +39,7 @@
   "description": "node.js node for microServiceBus.com. Please visit https://microservicebus.com for more information.",
   "devDependencies": {},
   "engines": {
-    "node": ">=10.15.0 <14.3.0"
+    "node": ">=10.15.0 <18.8.0"
   },
   "keywords": [
     "IoT",
@@ -66,5 +66,5 @@
     "lint": "jshint Utils.js",
     "test": "nyc --reporter=html --reporter=text mocha"
   },
-  "version": "3.9.96"
+  "version": "4.0.0"
 }
