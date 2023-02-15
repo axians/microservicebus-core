@@ -6,7 +6,7 @@
   },
   "bin": {},
   "dependencies": {
-    "@microsoft/signalr": "3.1.25",
+    "@microsoft/signalr": "7.0.2",
     "app-module-path": "2.2.0",
     "async": "3.2.3",
     "chai": "4.3.7",
@@ -19,27 +19,25 @@
     "mocha": "10.2.0",
     "moment": "2.29.4",
     "moment-timezone": "0.5.40",
-    "network": "0.6.1",
+    "msb-network": "0.7.0",
     "node-persist": "3.1.0",
     "nyc": "15.1.0",
     "progress": "1.1.8",
-    "request": "2.88.2",
     "require-reload": "0.2.2",
-    "retry-request": "4.2.2",
     "should": "13.2.3",
     "supertest": "6.3.3",
     "underscore": "1.13.6",
     "uuid": "8.3.2"
   },
   "optionalDependencies": {
-    "dbus-native": "0.4.0",
+    "msb-dbus-native":"0.5.0",    
     "diskusage": "1.1.3",
     "node-pty": "0.9.0"
   },
   "description": "node.js node for microServiceBus.com. Please visit https://microservicebus.com for more information.",
   "devDependencies": {},
   "engines": {
-    "node": ">=10.15.0 <18.8.0"
+    "node": ">=10.15.0 <18.99.0"
   },
   "keywords": [
     "IoT",
@@ -66,5 +64,5 @@
     "lint": "jshint Utils.js",
     "test": "nyc --reporter=html --reporter=text mocha"
   },
-  "version": "4.0.2"
+  "version": "4.2.5"
 }
