@@ -6,7 +6,7 @@
   },
   "bin": {},
   "dependencies": {
-    "@microsoft/signalr": "3.1.25",
+    "@microsoft/signalr": "6.0.13",
     "app-module-path": "2.2.0",
     "async": "3.2.3",
     "chai": "4.3.7",
@@ -64,5 +64,5 @@
     "lint": "jshint Utils.js",
     "test": "nyc --reporter=html --reporter=text mocha"
   },
-  "version": "4.2.7"
+  "version": "4.2.12"
 }
