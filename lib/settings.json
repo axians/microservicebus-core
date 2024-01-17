@@ -1,13 +1,5 @@
 {
     "hubUri": "wss://microservicebus.com",
-    "trackMemoryUsage": 0,
-    "enableKeyPress": false,
     "useEncryption": false,
-    "log": "",
-    "nodeName": "unitTestNode1",
-    "organizationId": "2a0a736e-b4da-4bdb-9aaf-919b69e35a31",
-    "machineName": "unitTestNode1",
-    "id": "644424d1-b591-4fd0-b7c2-29736b2f51ac",
-    "sas": "HostName=msb-Tutorial.azure-devices.net;DeviceId=unitTestNode1;SharedAccessKey=84nlPUWpLvM80jSLSqbyaJqaHpo8/vequ9ifuTca1F8=",
-    "port": 9090
+    "debug": false
 }
